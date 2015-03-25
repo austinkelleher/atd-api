@@ -1,4 +1,4 @@
-adt-api
+atd-api
 =========
 
 NodeJS API for [afterthedeadline.com (ADT)](http://www.afterthedeadline.com/api.slp "After the Deadline API documentation").
@@ -10,7 +10,7 @@ Supported API requests:
     stats         - Returns statistics about the writing quality of a document
 
 ##Installation
-    npm install adt-api
+    npm install atd-api
 
 ## Request Examples
 
