@@ -9,9 +9,6 @@ Supported API requests:
     checkGrammar  - Checks a document (sans spelling) returns errors and suggestions
     stats         - Returns statistics about the writing quality of a document
 
-##Installation
-    npm install atd-api
-
 ## Request Examples
 
 ###Validate spelling
