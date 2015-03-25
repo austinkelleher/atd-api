@@ -16,7 +16,7 @@ var ApiUrls = {
 /**
 * @var key API Key
 */
-var ATDApi = function(key) {
+module.exports = ATDApi = function(key) {
 	this.API_KEY = key;
 };
 
@@ -75,5 +75,3 @@ ATDApi.prototype._post = function(url, form, callback) {
 			callback(body);
 	});
 };
-
-exports.ATDApi = ATDApi;
