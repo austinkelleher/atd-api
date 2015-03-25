@@ -1,0 +1,20 @@
+{
+  "name": "atd-api",
+  "description": "NodeJS API for afterthedeadline.com (ATD)",
+  "version": "1.0",
+  "keywords": [
+    "afterthedeadline",
+    "atd",
+    "api"
+  ],
+  "author": "Austin Kelleher",
+  "dependencies": {
+    "request": "^2.54.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/austinkelleher/atd-api.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/austinkelleher/atd-api"
+}
