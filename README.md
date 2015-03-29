@@ -26,16 +26,16 @@ Supported Languages/Prefixes:
 	var api1 = new ATDApi('API KEY HERE', 'es'); //Spanish language
 
 ###Validate spelling
-        api.checkDocument('this is a tes tnh', function(body, error) {
-                console.log(body);
-        });
+	api.checkDocument('this is a tes tnh', function(body, error) {
+	    console.log(body);
+	});
 
 ###Validate grammar
-        api.checkGrammar('this is a tes tnh', function(body, error) {
-                console.log(body);
-        });
+	api.checkGrammar('this is a tes tnh', function(body, error) {
+	    console.log(body);
+	});
 
 ###Obtain Statistics
-        api.stats('this is a tes tnh', function(body, error) {
-                console.log(body);
-        });
+	api.stats('this is a tes tnh', function(body, error) {
+	    console.log(body);
+	});
