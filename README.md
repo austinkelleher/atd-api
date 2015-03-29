@@ -10,10 +10,10 @@ Supported API requests:
     stats         - Returns statistics about the writing quality of a document
 
 Supported Languages/Prefixes:
-	Frech      - fr
-	German     - de
-	Portuguese - pt
-	Spanish    - es
+    Frech      - fr
+    German     - de
+    Portuguese - pt
+    Spanish    - es
 
 ##Installation
 	npm install atd-api
