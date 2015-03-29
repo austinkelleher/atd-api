@@ -3,7 +3,7 @@ var request = require('request');
 /**
 * Base URL of the After the Deadline API service
 */
-var BASE_URL = 'http://service.afterthedeadline.com';
+var BASE_URL = 'service.afterthedeadline.com';
 /**
 * After the Deadline API paths
 */
@@ -16,8 +16,12 @@ var ApiUrls = {
 /**
 * @var key API Key
 */
-module.exports = ATDApi = function(key) {
+module.exports = ATDApi = function(key, language) {
 	this.API_KEY = key;
+
+	if(typeof(language) !== 'undefined' && this.getSupportedLanguages().indexOf(language) != -1) {
+		BASE_URL = language + BASE_URL;
+	}
 };
 
 /**
@@ -36,6 +40,13 @@ ATDApi.prototype.checkDocument = function(text, callback) {
 */
 ATDApi.prototype.checkGrammar = function(text, callback) {
 	this._textRequest(ApiUrls.CHECK_GRAM, text, callback);
+};
+
+/**
+* @return Array of prefixed ATD supported languages
+*/
+ATDApi.prototype.getSupportedLanguages = function() {
+	return ['fr', 'de', 'pt', 'es'];
 };
 
 /**
@@ -68,7 +79,7 @@ ATDApi.prototype._textRequest = function(url, text, callback) {
 * @var callback Callback with returned data and errors
 */
 ATDApi.prototype._post = function(url, form, callback) {
-	request.post(url, { form: form }, function (error, response, body) {
+	request.post('http://' + url, { form: form }, function (error, response, body) {
 		if(error)
 			callback(body, error);
 		else
