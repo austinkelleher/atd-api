@@ -1,7 +1,7 @@
 {
   "name": "atd-api",
   "description": "NodeJS API for afterthedeadline.com (ATD)",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "keywords": [
     "afterthedeadline",
     "atd",
