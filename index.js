@@ -15,13 +15,13 @@ var ApiUrls = {
 
 /**
 * @var key API Key
+* @var language ATD translation language. Defaults to English.
 */
 module.exports = ATDApi = function(key, language) {
 	this.API_KEY = key;
-
-	if(typeof(language) !== 'undefined' && this.getSupportedLanguages().indexOf(language) != -1) {
-		BASE_URL = language + BASE_URL;
-	}
+	
+	if(typeof(language) !== 'undefined')
+		this.setLanguage(language);
 };
 
 /**
@@ -43,19 +43,27 @@ ATDApi.prototype.checkGrammar = function(text, callback) {
 };
 
 /**
-* @return Array of prefixed ATD supported languages
-*/
-ATDApi.prototype.getSupportedLanguages = function() {
-	return ['fr', 'de', 'pt', 'es'];
-};
-
-/**
 * Returns statistical information on grammar, spelling, and style
 * for the provided text
 * @var text String to compute statistics on
 */
 ATDApi.prototype.stats = function(text, callback) {
 	this._textRequest(ApiUrls.STATS, text, callback);
+};
+
+/**
+* @return Array of prefixed ATD supported languages
+*/
+ATDApi.prototype.getSupportedLanguages = function() {
+	return ['fr', 'de', 'pt', 'es'];
+};
+
+ATDApi.prototype.setLanguage = function(language) {
+	if(this.getSupportedLanguages().indexOf(language) === -1) {
+		console.log("Language type: " + language + " is not supported.");
+	}
+
+	BASE_URL = language + BASE_URL;
 };
 
 /**
