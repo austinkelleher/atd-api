@@ -65,6 +65,7 @@ ATDApi.prototype.getSupportedLanguages = function() {
 ATDApi.prototype.setLanguage = function(language) {
 	if(this.getSupportedLanguages().indexOf(language) === -1) {
 		console.log("Language type: " + language + " is not supported.");
+		return;
 	}
 
 	BASE_URL = language + BASE_URL;
